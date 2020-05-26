@@ -8,48 +8,61 @@
   <title>Hospital</title>
 
   <style>
- #table {
-  -webkit-box-shadow: -1px 5px 23px -1px rgba(189, 179, 189, 1);
-  -moz-box-shadow: -1px 5px 23px -1px rgba(189, 179, 189, 1);
-  box-shadow: -1px 5px 23px -1px rgba(189, 179, 189, 1);
-}
-@media screen and (max-width: 600px) {
-       table {
-           width:100%;
-       }
-       thead {
-           display: none;
-       }
-       tr:nth-of-type(2n) {
-           background-color: inherit;
-       }
-       tr td:first-child {
-           background: #f0f0f0;
-           font-weight:bold;
-           font-size:1.3em;
-       }
-       tbody td {
-           display: block;
-           text-align:center;
-       }
-       tbody td:before {
-           content: attr(data-th);
-           display: block;
-           text-align:center;
-       }
-}
+    #table {
+      -webkit-box-shadow: -1px 5px 23px -1px rgba(189, 179, 189, 1);
+      -moz-box-shadow: -1px 5px 23px -1px rgba(189, 179, 189, 1);
+      box-shadow: -1px 5px 23px -1px rgba(189, 179, 189, 1);
+    }
 
+    @media screen and (max-width: 600px) {
+      table {
+        width: 100%;
+      }
 
+      thead {
+        display: none;
+      }
+
+      tr:nth-of-type(2n) {
+        background-color: inherit;
+      }
+
+      tr td:first-child {
+        background: #f0f0f0;
+        font-weight: bold;
+        font-size: 1.3em;
+      }
+
+      tbody td {
+        display: block;
+        text-align: center;
+      }
+
+      tbody td:before {
+        content: attr(data-th);
+        display: block;
+        text-align: center;
+      }
+    }
   </style>
 </head>
 
 <body>
+
+
+  <ul class="nav justify-content-end bg-dark ">
+    
+    <li class="nav-item">
+      <a class="nav-link text-white" href="<?= site_url('/perfil/salir') ?>">Cerrar Sesión</a>
+    </li>
+  </ul>
+
   <div class="text-center">
     <h1>Hospital</h1>
   </div>
   <br>
-  <div class="container-fluid">  
-    <table  id="table" class="table table-hover table-bordered table-sm" cellspacing="0" width="100%" id="sombra">
+  <div class="container-fluid">
+    <table id="table" class="table table-hover table-bordered table-sm" cellspacing="0" width="100%" id="sombra">
       <thead>
         <tr class="table-primary">
           <th scope="col">ID</th>
@@ -82,7 +95,7 @@
             <td><?= $paciente['cuarto'] ?></td>
             <td><?= $paciente['padecimiento'] ?></td>
             <td><a href="<?= site_url('pacientes/editar/' . $paciente['id_pacientes']) ?>" class="btn btn-warning">Editar</a>
-            <a href="<?= site_url('pacientes/eliminar/' . $paciente['id_pacientes']) ?>" class="btn btn-danger">Delete</a></td>
+              <a href="<?= site_url('pacientes/eliminar/' . $paciente['id_pacientes']) ?>" class="btn btn-danger">Delete</a></td>
           </tr>
         <?php } ?>
       </tbody>
@@ -141,36 +154,36 @@
                 </div>
 
                 <div class="modal-footer">
-                  <button type="submit" class="btn btn-warning" name="save">Guardar</button>                
+                  <button type="submit" class="btn btn-warning" name="save">Guardar</button>
                 </div>
                 <br>
-                
+
             </form>
-                
+
 
           </div>
-                
+
 
         </div>
       </div>
     </div>
   </div>
-  
+
   <script>
-$(document).ready(function () {
-$('#dtHorizontalVerticalExample').DataTable({
-"scrollX": true,
-"scrollY": 200,
-});
-$('.dataTables_length').addClass('bs-select');
-});
-</script>
-<script>
-     $('#websendeos').stacktable();
-</script>
-<script>
-     $('table').stacktable();
-</script>
+    $(document).ready(function() {
+      $('#dtHorizontalVerticalExample').DataTable({
+        "scrollX": true,
+        "scrollY": 200,
+      });
+      $('.dataTables_length').addClass('bs-select');
+    });
+  </script>
+  <script>
+    $('#websendeos').stacktable();
+  </script>
+  <script>
+    $('table').stacktable();
+  </script>
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>

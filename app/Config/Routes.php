@@ -30,11 +30,17 @@ $routes->setAutoRoute(true);
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
-// $routes->get('/', 'Home::index');
-$routes->get('/', 'Pacientes::index');
-$routes->get('/', 'Pacientes::guardar');
-$routes->get('/', 'Pacientes::editar');
-$routes->get('/', 'Pacientes::eliminar');
+$routes->get('/', 'Home::index');
+
+
+$routes->get('/pacientes', 'Pacientes::index');
+$routes->get('/pacientes/guardar', 'Pacientes::guardar');
+$routes->get('/pacientes/editar', 'Pacientes::editar');
+$routes->get('/pacientes/eliminar', 'Pacientes::eliminar');
+
+$routes->get('/perfil', 'Perfil::index');
+$routes->get('/perfil/salir', 'Perfil::salir');
+
 
 /**
  * --------------------------------------------------------------------

@@ -8,6 +8,7 @@ class Pacientes extends BaseController
 {
     public function index()
     {
+        if ($this->session->logged_in) {
         $model = new PacientesModel();
         $data = [
             'pacientes' => $model->findAll(),
@@ -15,6 +16,9 @@ class Pacientes extends BaseController
         ];
 
         return view('pacientes', $data);
+    }
+    return redirect()->to('/');
+    
     }
 
     //--------------------------------------------------------------------
@@ -48,5 +52,3 @@ public function eliminar($id_pacientes){
 
     
 }
-
-?>
